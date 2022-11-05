@@ -5,10 +5,8 @@ import React from "react";
 export default function App() {
   return (
     <>
-      <RestaurantsScreen/>
+      <RestaurantsScreen />
       <ExpoStatusBar style="auto" />
     </>
   );
 }
-
-

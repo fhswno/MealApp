@@ -1,23 +1,21 @@
 import React from "react";
-import { StyleSheet, Text, View, SafeAreaView, StatusBar } from "react-native";
-import { Searchbar } from 'react-native-paper';
-import { RestaurantInfo } from "../components/restaurant-info.component";
+import { StyleSheet, View, SafeAreaView, StatusBar } from "react-native";
+import { Searchbar } from "react-native-paper";
+import { RestaurantInfo } from "../components/restaurant-info-card.component";
 
 export const RestaurantsScreen = () => {
   return (
     <>
       <SafeAreaView style={styles.mainContainer}>
         <View style={styles.search}>
-          <Searchbar
-            placeholder="Search"
-          />
+          <Searchbar placeholder="Search" />
         </View>
         <View style={styles.containerBottom}>
-          <RestaurantInfo/>
+          <RestaurantInfo />
         </View>
       </SafeAreaView>
     </>
-  )
+  );
 };
 
 const styles = StyleSheet.create({
