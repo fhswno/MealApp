@@ -5,14 +5,14 @@ import { RestaurantInfoCard } from "../components/restaurant-info-card.component
 import styled from "styled-components/native";
 
 const SearchContainer = styled(View)`
-  background-color: ${props => props.theme.colors.bg.primary};
-  padding: ${props => props.theme.space[3]};
+  background-color: ${(props) => props.theme.colors.bg.primary};
+  padding: ${(props) => props.theme.space[3]};
 `;
 
 const RestaurantListContainer = styled(View)`
-  background-color: ${props => props.theme.colors.bg.primary};
+  background-color: ${(props) => props.theme.colors.bg.primary};
   flex: 1;
-  padding: ${props => props.theme.space[3]};
+  padding: ${(props) => props.theme.space[3]};
 `;
 
 export const RestaurantsScreen = () => {
@@ -23,7 +23,7 @@ export const RestaurantsScreen = () => {
           <Searchbar placeholder="Search" />
         </SearchContainer>
         <RestaurantListContainer>
-          <RestaurantInfoCard />
+          <RestaurantInfoCard/>
         </RestaurantListContainer>
       </SafeAreaView>
     </>
