@@ -1,19 +1,19 @@
 {
   "extends": [
-    "@react-native-community",
-    "@babel/plugin-syntax-jsx"
+    "@react-native-community"
+    // "@babel/plugin-syntax-jsx"
   ],
   "rules": {
     "quotes": [2, "double", { "avoidEscape": true }]
   },
-  "parser": "@babel/plugin-syntax-jsx",
+  // "parser": "@babel/plugin-syntax-jsx",
   "parserOptions": {
-    "requireConfigFile": false,
-    "babelOptions": {
-      "presets": ["@babel/plugin-syntax-jsx"]
-    }
-  },
-  "plugins": [
-    "@babel/plugin-syntax-jsx"
-  ]
+    "requireConfigFile": false
+    // "babelOptions": {
+    //   "presets": ["@babel/plugin-syntax-jsx"]
+    // }
+  }
+  // "plugins": [
+  //   "@babel/plugin-syntax-jsx"
+  // ]
 }
