@@ -5,14 +5,14 @@ import { RestaurantInfoCard } from "../components/restaurant-info-card.component
 import styled from "styled-components/native";
 
 const SearchContainer = styled(View)`
-  background-color: white;
-  padding: 16px;
+  background-color: ${props => props.theme.colors.bg.primary};
+  padding: ${props => props.theme.space[3]};
 `;
 
 const RestaurantListContainer = styled(View)`
-  background-color: blue;
+  background-color: ${props => props.theme.colors.bg.primary};
   flex: 1;
-  padding: 16px;
+  padding: ${props => props.theme.space[3]};
 `;
 
 export const RestaurantsScreen = () => {

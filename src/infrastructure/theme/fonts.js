@@ -1,4 +1,5 @@
 export const fonts = {
+  inter: "Inter_400Regular",
   body: "Oswald_400Regular",
   heading: "Lato_400Regular",
   monospace: "Oswald_400Regular",
