@@ -1,10 +1,11 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 import { Card } from "react-native-paper";
 import styled from "styled-components/native";
 import { SvgXml } from "react-native-svg";
-import star from '../../../../assets/star';
-import open from '../../../../assets/open';
+import star from "../../../../assets/star";
+import open from "../../../../assets/open";
+import { Spacer } from "../../../components/spacer/spacer.component";
 
 const RestaurantCard = styled(Card)`
   background-color: ${(props) => props.theme.colors.bg.primary};
@@ -69,10 +70,10 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
   return (
     <>
       <View>
-        <RestaurantCard elevation={ 5 }>
-          <RestaurantCardCover key={ name } source={{ uri: photos[0] }} />
+        <RestaurantCard elevation={5}>
+          <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
           <Info>
-            <Title>{ name }</Title>
+            <Title>{name}</Title>
             <Section>
               <Rating>
                 {ratingArray.map((index) => (
@@ -81,18 +82,32 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
               </Rating>
               <SectionEnd>
                 {isClosedTemporarily && (
-                  <Text variant="label" style={{ color: "red" }}>{ "Closed Temporarily".toUpperCase() }</Text>
+                  <Text variant="label" style={styles.closedText}>
+                    {"Closed Temporarily".toUpperCase()}
+                  </Text>
                 )}
-                <View style={{ paddingLeft: 16 }} />
-                {isOpenNow && <Open xml={open} width={20} height={20}/>}
-                <View style={{ paddingLeft: 16 }} />
-                  <Image style={{ width: 15, height: 15 }} source={{ uri: icon }} />
+                <Spacer position="left" size="large">
+                  {isOpenNow && <Open xml={open} width={20} height={20} />}
+                </Spacer>
+                <Spacer position="left" size="large">
+                  <Image style={styles.image} source={{ uri: icon }} />
+                </Spacer>
               </SectionEnd>
             </Section>
-            <Address>{ address }</Address>
+            <Address>{address}</Address>
           </Info>
         </RestaurantCard>
       </View>
     </>
   );
 };
+
+const styles = StyleSheet.create({
+  image: {
+    width: 15,
+    height: 15,
+  },
+  closedText: {
+    color: "red",
+  },
+});
