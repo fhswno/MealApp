@@ -1,11 +1,21 @@
 import React from "react";
 import { View } from "react-native";
-import { Text } from '../../../components/typography/text.component'
+import { Text } from "../../../components/typography/text.component";
 import { SvgXml } from "react-native-svg";
 import star from "../../../../assets/star";
 import open from "../../../../assets/open";
 import { Spacer } from "../../../components/spacer/spacer.component";
-import { Icon, Section, SectionEnd, Info, Address, Rating, RestaurantCard, RestaurantCardCover, Open } from "./restaurant-info-card.styles";
+import {
+  Icon,
+  Section,
+  SectionEnd,
+  Info,
+  Address,
+  Rating,
+  RestaurantCard,
+  RestaurantCardCover,
+  Open,
+} from "./restaurant-info-card.styles";
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
@@ -48,7 +58,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
                   <Icon source={{ uri: icon }} />
                 </Spacer>
               </SectionEnd>
-            </Section> 
+            </Section>
             <Address>{address}</Address>
           </Info>
         </RestaurantCard>

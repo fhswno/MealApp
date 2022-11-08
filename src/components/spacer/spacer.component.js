@@ -29,7 +29,7 @@ export const Spacer = ({ position, size, children }) => {
   const theme = useTheme();
   const variant = getVariant(position, size, theme);
   return <SpacerView variant={variant}>{children}</SpacerView>;
-}
+};
 
 Spacer.defaultProps = {
   position: "top",
