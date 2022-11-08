@@ -1,7 +1,7 @@
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurants.screen";
-import { Text, StyleSheet, SafeAreaView } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { Text, StyleSheet, SafeAreaView } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
@@ -13,6 +13,7 @@ import {
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
+import { restaurantsRequest } from "./src/services/restaurants/mock/restaurant.service";
 
 const SettingsScreen = () => (
   <SafeAreaView>
@@ -22,7 +23,7 @@ const SettingsScreen = () => (
 
 const MapScreen = () => (
   <SafeAreaView>
-      <Text>Map</Text>
+    <Text>Map</Text>
   </SafeAreaView>
 );
 
@@ -68,7 +69,7 @@ export default function App() {
             screenOptions={({ route }) => ({
               tabBarIcon: ({ focused, color, size }) => {
                 let iconName;
-    
+
                 if (route.name === 'Restaurants') {
                   iconName = focused
                     ? 'md-restaurant'
@@ -78,7 +79,7 @@ export default function App() {
                 } else if (route.name === 'Settings') {
                   iconName = focused ? 'md-settings' : 'md-settings-outline';
                 }
-    
+
                 // You can return any component that you like here!
                 return <Ionicons name={iconName} size={size} color={color} />;
               },
@@ -103,9 +104,3 @@ export default function App() {
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1
-  }
-});
