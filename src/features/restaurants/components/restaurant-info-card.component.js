@@ -53,6 +53,11 @@ const Open = styled(SvgXml)`
   flex-direction: row;
 `;
 
+const Icon = styled.Image`
+  width: 15px;
+  height: 15px;
+`;
+
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
     name = "Israeli Restaurant",
@@ -91,7 +96,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
                   {isOpenNow && <Open xml={open} width={20} height={20} />}
                 </Spacer>
                 <Spacer position="left" size="large">
-                  <Image style={styles.image} source={{ uri: icon }} />
+                  <Icon source={{ uri: icon }} />
                 </Spacer>
               </SectionEnd>
             </Section> 
@@ -103,12 +108,8 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
   );
 };
 
-const styles = StyleSheet.create({
-  image: {
-    width: 15,
-    height: 15,
-  },
-  closedText: {
-    color: "red",
-  },
-});
+// const styles = StyleSheet.create({
+//   closedText: {
+//     color: "red",
+//   },
+// });
