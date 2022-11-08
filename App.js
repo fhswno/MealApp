@@ -28,6 +28,21 @@ const MapScreen = () => (
 
 const Tab = createBottomTabNavigator();
 
+const TAB_ICON = {
+  Restaurants: "md-restaurant",
+  Map: "md-map",
+  Settings: "md-settings",
+};
+
+const createScreenOptions = ({ route }) => {
+  const iconName = TAB_ICON[route.name];
+  return {
+    tabBarIcon: ({ size, color }) => (
+      <Ionicons name={iconName} size={size} color={color} />
+    ),
+  };
+};
+
 export default function App() {
   const [interLoaded] = useFonts({
     Inter_400Regular,
@@ -49,7 +64,7 @@ export default function App() {
     <>
       <ThemeProvider theme={theme}>
         <NavigationContainer>
-          <Tab.Navigator
+          {/* <Tab.Navigator
             screenOptions={({ route }) => ({
               tabBarIcon: ({ focused, color, size }) => {
                 let iconName;
@@ -70,6 +85,13 @@ export default function App() {
               tabBarActiveTintColor: 'tomato',
               tabBarInactiveTintColor: 'gray',
             })}
+          > */}
+          <Tab.Navigator
+            screenOptions={createScreenOptions}
+            tabBarOptions={{
+              activeTintColor: "tomato",
+              inactiveTintColor: "gray",
+            }}
           >
             <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
             <Tab.Screen name="Map" component={MapScreen} />
