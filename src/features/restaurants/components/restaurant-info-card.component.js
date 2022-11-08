@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Image, StyleSheet } from "react-native";
+import { Text } from '../../../components/typography/text.component'
 import { Card } from "react-native-paper";
 import styled from "styled-components/native";
 import { SvgXml } from "react-native-svg";
@@ -16,11 +17,11 @@ const RestaurantCardCover = styled(Card.Cover)`
   background-color: ${(props) => props.theme.colors.bg.primary};
 `;
 
-const Title = styled.Text`
-  font-family: ${(props) => props.theme.fonts.inter};
-  font-size: ${(props) => props.theme.fontSizes.body};
-  color: ${(props) => props.theme.colors.ui.primary};
-`;
+// const Title = styled.Text`
+//   font-family: ${(props) => props.theme.fonts.inter};
+//   font-size: ${(props) => props.theme.fontSizes.body};
+//   color: ${(props) => props.theme.colors.ui.primary};
+// `;
 
 const Address = styled.Text`
   font-family: ${(props) => props.theme.fonts.heading};
@@ -73,7 +74,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
         <RestaurantCard elevation={5}>
           <RestaurantCardCover key={name} source={{ uri: photos[0] }} />
           <Info>
-            <Title>{name}</Title>
+            <Text variant="label">{name}</Text>
             <Section>
               <Rating>
                 {ratingArray.map((index) => (
@@ -82,7 +83,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
               </Rating>
               <SectionEnd>
                 {isClosedTemporarily && (
-                  <Text variant="label" style={styles.closedText}>
+                  <Text variant="error">
                     {"Closed Temporarily".toUpperCase()}
                   </Text>
                 )}
@@ -93,7 +94,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
                   <Image style={styles.image} source={{ uri: icon }} />
                 </Spacer>
               </SectionEnd>
-            </Section>
+            </Section> 
             <Address>{address}</Address>
           </Info>
         </RestaurantCard>
