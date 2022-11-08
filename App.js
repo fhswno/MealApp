@@ -56,12 +56,12 @@ export default function App() {
     
                 if (route.name === 'Restaurants') {
                   iconName = focused
-                    ? 'fast-food'
-                    : 'fast-food-outline';
+                    ? 'md-restaurant'
+                    : 'md-restaurant-outline';
                 } else if (route.name === 'Map') {
-                  iconName = focused ? 'map' : 'map-outline';
+                  iconName = focused ? 'md-map' : 'md-map-outline';
                 } else if (route.name === 'Settings') {
-                  iconName = focused ? 'settings' : 'settings-outline';
+                  iconName = focused ? 'md-settings' : 'md-settings-outline';
                 }
     
                 // You can return any component that you like here!
