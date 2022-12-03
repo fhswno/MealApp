@@ -4,6 +4,7 @@
     // "@babel/plugin-syntax-jsx"
   ],
   "rules": {
+    "no-shadow": "off",
     "quotes": [2, "double", { "avoidEscape": true }]
   },
   // "parser": "@babel/plugin-syntax-jsx",

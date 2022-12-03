@@ -1,5 +1,4 @@
-import { isLoading } from "expo-font";
-import React, { useEffect, useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
 
 import { locationRequest, locationTransform } from "./location.service";
 
@@ -14,8 +13,14 @@ export const LocationsContextProvider = ({ children }) => {
   const onSearch = (searchKeyword) => {
     setIsLoading(true);
     setKeyword(searchKeyword);
-    if (!searchKeyword.length) return;
-    locationRequest(searchKeyword.toLowerCase())
+  };
+
+  useEffect(() => {
+    if (!keyword.length) {
+      return;
+    }
+
+    locationRequest(keyword.toLowerCase())
       .then(locationTransform)
       .then((result) => {
         setIsLoading(false);
@@ -25,11 +30,7 @@ export const LocationsContextProvider = ({ children }) => {
         setIsLoading(false);
         setError(err);
       });
-  };
-
-  // useEffect(() => {
-  //   onSearch(keyword);
-  // }, []);
+  }, [keyword]);
 
   return (
     <LocationsContext.Provider

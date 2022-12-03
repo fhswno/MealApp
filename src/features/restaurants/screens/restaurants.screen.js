@@ -20,8 +20,7 @@ const RestaurantList = styled(FlatList).attrs({
 })``;
 
 export const RestaurantsScreen = () => {
-  const { isLoading, error, restaurants } = useContext(RestaurantsContext);
-  console.log(error);
+  const { isLoading, restaurants } = useContext(RestaurantsContext);
   return (
     <>
       <SafeAreaView style={styles.status}>
@@ -54,9 +53,9 @@ const styles = StyleSheet.create({
     marginTop: StatusBar.currentHeight,
   },
   activityIndicatorContainer: {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
+    position: "absolute",
+    top: "50%",
+    left: "50%",
   },
   activityIndicatorElement: {
     marginLeft: -25,
